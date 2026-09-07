@@ -33,3 +33,6 @@ target/
 # IDE files
 .idea/
 *.iml
+
+# Local database
+src/database/data.csv
