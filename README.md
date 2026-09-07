@@ -6,28 +6,28 @@ The platform provides a desktop environment where players can create accounts, m
 
 ## Features
 
-- User registration and login
-- Player profiles and profile pictures
-- Player statistics and leaderboards
-- Matchmaking queues
-- Skill-based matchmaking
-- Game lobbies
-- Direct player challenges
-- Opponent chat interface
-- Game result tracking
-- Tic-Tac-Toe
-- Connect Four
-- Modular move validation
-- JUnit test coverage
+* User registration and login
+* Player profiles and profile pictures
+* Player statistics and leaderboards
+* Matchmaking queues
+* Skill-based matchmaking
+* Game lobbies
+* Direct player challenges
+* Opponent chat interface
+* Game result tracking
+* Tic-Tac-Toe
+* Connect Four
+* Modular move validation
+* JUnit test coverage
 
 ## Technologies
 
-- Java 25
-- JavaFX 25
-- Maven
-- FXML
-- JUnit
-- Git
+* Java 25
+* JavaFX 25
+* Maven
+* FXML
+* JUnit
+* Git
 
 ## Architecture
 
@@ -37,23 +37,23 @@ The application separates the user interface, game logic, validation system, mat
 JavaFX User Interface
         |
         v
-Controllers
+   Controllers
         |
         v
-Game Session
+   Game Session
         |
         v
-Game Engine
+   Game Engine
         |
         v
 Move Validation Manager
    |        |        |
    v        v        v
-Turn     Bounds   Game Rules
+ Turn     Bounds   Game Rules
 Validator Validator Validator
         |
         v
-Game State
+     Game State
         |
         v
 Outcome Evaluation
@@ -110,60 +110,99 @@ mvnw.cmd
 
 ## Requirements
 
-- JDK 25
-- Git
-- Windows, macOS, or Linux with JavaFX-compatible graphics support
+* JDK 25
+* Git
+* Windows, macOS, or Linux with JavaFX-compatible graphics support
 
 Maven does not need to be installed separately because the project includes the Maven Wrapper.
 
 ## Setup
 
-Clone the repository:
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/DavidLawal123/SENG300-Multiplayer-Game.git
 cd SENG300-Multiplayer-Game
 ```
 
+### 2. Create the local database
+
 The application uses a local CSV file for user persistence.
 
-Create:
+The database file is intentionally excluded from version control because it contains local user data.
 
-```text
-src/database/data.csv
-```
+Create the local database by copying the provided template.
 
-using `src/database/data.template.csv` as a starting point.
-
-The local `data.csv` file is intentionally excluded from version control.
-
-## Running the Application
-
-On Windows:
+#### Windows PowerShell
 
 ```powershell
-.\mvnw.cmd javafx:run
+Copy-Item ".\src\database\data.template.csv" ".\src\database\data.csv"
 ```
 
-On macOS or Linux:
+#### macOS / Linux
 
 ```bash
-./mvnw javafx:run
+cp ./src/database/data.template.csv ./src/database/data.csv
 ```
+
+The resulting project structure should contain:
+
+```text
+src/database/
+├── data.csv
+└── data.template.csv
+```
+
+`data.csv` is ignored by Git and should not be committed to the repository.
 
 ## Running Tests
 
-Run the test suite with:
+### Windows
 
 ```powershell
 .\mvnw.cmd clean test
 ```
 
-or on macOS/Linux:
+### macOS / Linux
 
 ```bash
 ./mvnw clean test
 ```
+
+A successful test run should end with:
+
+```text
+BUILD SUCCESS
+```
+
+## Running the Application
+
+### Windows
+
+```powershell
+.\mvnw.cmd javafx:run
+```
+
+### macOS / Linux
+
+```bash
+./mvnw javafx:run
+```
+
+The application will launch through the JavaFX Maven plugin.
+
+## Demo Account
+
+The database template includes sample accounts that can be used to test the application.
+
+Example:
+
+```text
+Username: player01
+Password: Password123
+```
+
+Additional accounts may be available in the provided database template.
 
 ## My Contribution — Move Validation System
 
@@ -171,13 +210,13 @@ My primary contribution to this project was the design and implementation of the
 
 I developed a modular validation pipeline that verifies player moves before they are applied to the game state. The system separates validation responsibilities into reusable components:
 
-- `MoveValidationManager` — coordinates the validation pipeline
-- `MoveValidator` — defines the validation interface
-- `TurnValidator` — verifies that the correct player is making the move
-- `BoundsValidator` — ensures moves are within the board boundaries
-- `TTTRuleValidator` — validates Tic-Tac-Toe-specific rules
-- `FourCRuleValidator` — validates Connect Four-specific rules
-- `RuleValidator` — provides the structure for game-specific validation
+* `MoveValidationManager` — coordinates the validation pipeline
+* `MoveValidator` — defines the validation interface
+* `TurnValidator` — verifies that the correct player is making the move
+* `BoundsValidator` — ensures moves are within the board boundaries
+* `TTTRuleValidator` — validates Tic-Tac-Toe-specific rules
+* `FourCRuleValidator` — validates Connect Four-specific rules
+* `RuleValidator` — provides the structure for game-specific validation
 
 The validation pipeline checks:
 
@@ -198,6 +237,14 @@ The project includes automated JUnit tests covering components of the game logic
 
 Run the full test suite with:
 
+### Windows
+
+```powershell
+.\mvnw.cmd clean test
+```
+
+### macOS / Linux
+
 ```bash
 ./mvnw clean test
 ```
@@ -210,4 +257,13 @@ Additional project documentation is available in the `docs/` directory, includin
 
 This project was developed as part of a software engineering course at the University of Calgary.
 
-The repository has been prepared as a personal portfolio project to demonstrate Java, JavaFX, object-oriented design, software architecture, testing, and Git-based development.
+The repository has been prepared as a personal portfolio project to demonstrate:
+
+* Java development
+* JavaFX application development
+* Object-oriented design
+* Software architecture
+* Modular validation
+* Automated testing
+* Git-based development
+* Software engineering practices
