@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6d6875;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.ucalgary.seng300.SettingsController">
+   <children>
+      <ImageView fx:id="menuOpen" fitHeight="17.0" fitWidth="22.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#openSidePanel" onMouseEntered="#menuHoverEnter" onMouseExited="#menuHoverExit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@menuButton.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="sidePane" prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: ffc8c8;">
+         <children>
+            <ImageView fx:id="menuClose" fitHeight="17.0" fitWidth="22.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#closeSidePanel" onMouseEntered="#menuHoverEnter" onMouseExited="#menuHoverExit" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@menuButton.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="toSettings" layoutX="37.0" layoutY="101.0" onMouseClicked="#goToSettings" onMouseEntered="#settingsHoverEnter" onMouseExited="#settingsHoverExit" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="toProfile" layoutX="37.0" layoutY="136.0" onMouseClicked="#goToProfile" onMouseEntered="#profileHoverEnter" onMouseExited="#profileHoverExit" strokeType="OUTSIDE" strokeWidth="0.0" text="User Profile">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="toLogout" layoutX="37.0" layoutY="172.0" onMouseClicked="#goToLogout" onMouseEntered="#logoutHoverEnter" onMouseExited="#logoutHoverExit" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="toHome" layoutX="37.0" layoutY="65.0" onMouseClicked="#goToHome" onMouseEntered="#homeHoverEnter" onMouseExited="#homeHoverExit" strokeType="OUTSIDE" strokeWidth="0.0" text="Home">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Circle fx:id="updatePicture" fill="DODGERBLUE" layoutX="307.0" layoutY="113.0" onMouseClicked="#changePFP" onMouseEntered="#profileEnter" onMouseExited="#profileExit" radius="63.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text fx:id="cU" layoutX="229.0" layoutY="222.0" onMouseClicked="#changeUsername" onMouseEntered="#cUHoverEnter" onMouseExited="#cUHoverExit" strokeType="OUTSIDE" strokeWidth="0.0" text="update username">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="cE" layoutX="249.0" layoutY="272.0" onMouseClicked="#changeEmail" onMouseEntered="#cEHoverEnter" onMouseExited="#cEHoverExit" strokeType="OUTSIDE" strokeWidth="0.0" text="update email">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="cP" layoutX="231.0" layoutY="322.0" onMouseClicked="#changePassword" onMouseEntered="#cPHoverEnter" onMouseExited="#cPHoverExit" strokeType="OUTSIDE" strokeWidth="0.0" text="update password">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Circle fx:id="pink" fill="#ffb4f8" layoutX="417.0" layoutY="72.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="blue" fill="#afeeff" layoutX="459.0" layoutY="72.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Circle fx:id="orange" fill="#ffb066" layoutX="502.0" layoutY="72.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Text fx:id="updatePfpText" layoutX="250.0" layoutY="117.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="update profile picture" />
+   </children>
+</AnchorPane>

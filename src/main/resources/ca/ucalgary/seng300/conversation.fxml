@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="200.0" style="-fx-background-color: #6d6875;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.ucalgary.seng300.ChatController">
+   <children>
+      <TextField fx:id="chatField" layoutX="10.0" layoutY="190.0" promptText="type here..." />
+      <ImageView fx:id="send" fitHeight="25.0" fitWidth="25.0" layoutX="168.0" layoutY="190.0" onMouseClicked="#onSendClick" onMouseEntered="#sendHoverEnter" onMouseExited="#sendHoverExit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@sendButton.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="161.0" prefWidth="182.0">
+         <children>
+            <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="161.0" prefWidth="182.0">
+               <content>
+                  <VBox fx:id="displayMessages" prefHeight="159.0" prefWidth="161.0" style="-fx-background-color: #6d6875;" />
+               </content>
+            </ScrollPane>
+         </children></Pane>
+   </children>
+</AnchorPane>

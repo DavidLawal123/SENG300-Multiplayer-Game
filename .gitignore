@@ -1,0 +1,35 @@
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+.kotlin
+
+### IntelliJ IDEA ###
+.idea/
+out/
+*.iws
+*.iml
+*.ipr
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+# --- Logs ---
+*.log
+
+### Generated Maven Files ###
+.classpath
+.project
+.settings
+
+# Local database
+src/database/data.csv
+
+# Maven build output
+target/
+
+# IDE files
+.idea/
+*.iml

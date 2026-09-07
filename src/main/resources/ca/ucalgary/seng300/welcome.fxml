@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6D6875;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.ucalgary.seng300.WelcomeController">
+   <children>
+      <Button fx:id="toLogin" layoutX="163.0" layoutY="222.0" mnemonicParsing="false" onAction="#switchToLogin" onMouseEntered="#loginHoverEnter" onMouseExited="#loginHoverExit" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: fae8e0;" text="LOGIN" textFill="#6d6875" />
+      <Button fx:id="toSignup" layoutX="328.0" layoutY="222.0" mnemonicParsing="false" onAction="#switchToSignup" onMouseEntered="#signupHoverEnter" onMouseExited="#signupHoverExit" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: fae8e0;" text="SIGNUP" textFill="#6d6875" />
+      <Text fill="#e5989b" layoutX="216.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Text>
+      <Text fill="#e5989b" layoutX="480.0" layoutY="173.0" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THE LEFTOVERS" wrappingWidth="159.33330710728967">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="menuOpen" fitHeight="17.0" fitWidth="22.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#openSidePanel" onMouseEntered="#menuHoverEnter" onMouseExited="#menuHoverExit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@menuButton.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="sidePane" prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: b5838d;">
+         <children>
+            <ImageView fx:id="menuClose" fitHeight="17.0" fitWidth="22.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#closeSidePanel" onMouseEntered="#menuHoverEnter" onMouseExited="#menuHoverExit" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@menuButton.png" />
+               </image>
+            </ImageView>
+            <Text fill="#fae8e0" layoutX="37.0" layoutY="65.0" onMouseClicked="#onClickHome" strokeType="OUTSIDE" strokeWidth="0.0" text="Home">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="533.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

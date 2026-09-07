@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<!--this commit is for my own branch2 -->
+<!--saving changes-->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6D6875;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.ucalgary.seng300.ProfileController">
+   <children>
+      <ImageView fx:id="chatButton" fitHeight="40.0" fitWidth="40.0" layoutX="546.0" layoutY="349.0" onMouseClicked="#openCloseChat" onMouseEntered="#chatHoverEnter" onMouseExited="#chatHoverExit" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@chatButton.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="menuOpen" fitHeight="17.0" fitWidth="22.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#openSidePanel" onMouseEntered="#menuHoverEnter" onMouseExited="#menuHoverExit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@menuButton.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="sidePane" prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: ffc8c8;">
+         <children>
+            <ImageView fx:id="menuClose" fitHeight="17.0" fitWidth="22.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#closeSidePanel" onMouseEntered="#menuHoverEnter" onMouseExited="#menuHoverExit" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@menuButton.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="toSettings" fill="#6d6875" layoutX="37.0" layoutY="101.0" onMouseClicked="#goToSettings" onMouseEntered="#settingHoverEnter" onMouseExited="#settingHoverExit" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="toProfile" fill="#6d6875" layoutX="37.0" layoutY="136.0" onMouseClicked="#goToProfile" onMouseEntered="#profileHoverEnter" onMouseExited="#profileHoverExit" strokeType="OUTSIDE" strokeWidth="0.0" text="User Profile">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="toLogout" fill="#6d6875" layoutX="37.0" layoutY="172.0" onMouseClicked="#goToLogout" onMouseEntered="#logoutHoverEnter" onMouseExited="#logoutHoverExit" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="toHome" fill="#6d6875" layoutX="37.0" layoutY="65.0" onMouseClicked="#goToHome" onMouseEntered="#homeHoverEnter" onMouseExited="#homeHoverExit" strokeType="OUTSIDE" strokeWidth="0.0" text="Home">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Text fx:id="userLevel" fill="#e5989b" layoutX="103.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Level: " textAlignment="CENTER" wrappingWidth="347.3334655761719">
+         <font>
+            <Font name="Lucida Sans Typewriter Bold" size="14.0" />
+         </font></Text>
+      <Text fx:id="userName" fill="#e5989b" layoutX="225.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="150.0">
+         <font>
+            <Font name="Lucida Sans Typewriter Regular" size="15.0" />
+         </font></Text>
+      <Text fill="#e5989b" layoutX="226.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tictactoe(w/l/d)" wrappingWidth="150.0">
+         <font>
+            <Font name="Lucida Sans Typewriter Regular" size="15.0" />
+         </font></Text>
+      <Text fx:id="tictactoeWLD" layoutX="226.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="328.0">
+         <font>
+            <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+         </font></Text>
+      <Text fill="#e5989b" layoutX="226.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connect4(w/l/d)" wrappingWidth="150.0">
+         <font>
+            <Font name="Lucida Sans Typewriter Regular" size="15.0" />
+         </font></Text>
+      <Text fx:id="connect4WLD1" layoutX="225.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="328.0">
+         <font>
+            <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+         </font></Text>
+      <Circle fx:id="profilePic" fill="DODGERBLUE" layoutX="277.0" layoutY="132.0" onMouseClicked="#changePFP" radius="51.0" stroke="BLACK" strokeType="INSIDE" />
+      <Button fx:id="challengeC4Button" layoutX="437.0" layoutY="148.0" mnemonicParsing="false" onMouseClicked="#challengeC4" onMouseEntered="#C4HoverEnter" onMouseExited="#C4HoverExit" prefHeight="51.0" prefWidth="129.0" style="-fx-background-color: ffc8c8;" text="Challenge Player to C4" textAlignment="CENTER" textFill="#6d6875" wrapText="true">
+         <font>
+            <Font name="Lucida Console" size="12.0" />
+         </font></Button>
+      <Button fx:id="challengeTTTButton" layoutX="437.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#challengeTTT" onMouseEntered="#TTTHoverEnter" onMouseExited="#TTTHoverExit" prefHeight="51.0" prefWidth="129.0" style="-fx-background-color: e5989b;" text="Challenge Player to TTT" textAlignment="CENTER" textFill="#6d6875" wrapText="true">
+         <font>
+            <Font name="Lucida Console" size="12.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

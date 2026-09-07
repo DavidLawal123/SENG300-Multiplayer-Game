@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: fae8e0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.ucalgary.seng300.LeaderBoardController">
+    <ImageView fx:id="menuOpen" fitHeight="17.0" fitWidth="22.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#openSidePanel" onMouseEntered="#menuHoverEnter" onMouseExited="#menuHoverExit" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@menuButton.png" />
+        </image>
+    </ImageView>
+    <AnchorPane fx:id="sidePane" prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: b5838d;">
+        <children>
+            <ImageView fx:id="menuClose" fitHeight="17.0" fitWidth="22.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#closeSidePanel" onMouseEntered="#menuHoverEnter" onMouseExited="#menuHoverExit" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@menuButton.png" />
+                </image>
+            </ImageView>
+            <Text fx:id="toSettings" fill="#fae8e0" layoutX="37.0" layoutY="101.0" onMouseClicked="#goToSettings" onMouseEntered="#settingHoverEnter" onMouseExited="#settingHoverExit" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
+                <font>
+                    <Font size="15.0" />
+                </font>
+            </Text>
+            <Text fx:id="toProfile" fill="#fae8e0" layoutX="37.0" layoutY="136.0" onMouseClicked="#goToProfile" onMouseEntered="#profileHoverEnter" onMouseExited="#profileHoverExit" strokeType="OUTSIDE" strokeWidth="0.0" text="User Profile">
+                <font>
+                    <Font size="15.0" />
+                </font>
+            </Text>
+            <Text fx:id="toLogout" fill="#fae8e0" layoutX="37.0" layoutY="172.0" onMouseClicked="#goToLogout" onMouseEntered="#logoutHoverEnter" onMouseExited="#logoutHoverExit" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout">
+                <font>
+                    <Font size="15.0" />
+                </font>
+            </Text>
+            <Text fx:id="toHome" fill="#fae8e0" layoutX="37.0" layoutY="65.0" onMouseClicked="#goToHome" onMouseEntered="#homeHoverEnter" onMouseExited="#homeHoverExit" strokeType="OUTSIDE" strokeWidth="0.0" text="Home">
+                <font>
+                    <Font size="15.0" />
+                </font>
+            </Text>
+        </children>
+    </AnchorPane>
+    <Pane layoutX="182.0" layoutY="37.0" prefHeight="332.0" prefWidth="350.0">
+        <children>
+            <TableView fx:id="leaderboardTable" layoutX="-17.0" layoutY="5.0" prefHeight="300.0" prefWidth="405.0" style="-fx-background-color: fae8e0; -fx-border-color: #6d6875;">
+                <columns>
+               <TableColumn fx:id="col_rank" editable="false" prefWidth="40.0" resizable="false" text="Place" />
+                    <TableColumn fx:id="col_user" editable="false" prefWidth="110.0" resizable="false" sortType="DESCENDING" sortable="false" text="Username" />
+                    <TableColumn fx:id="col_winrate" editable="false" prefWidth="75.0" resizable="false" sortType="DESCENDING" text="Win Rate" />
+                    <TableColumn fx:id="col_wins" editable="false" prefWidth="59.0" resizable="false" sortType="DESCENDING" text="Wins" />
+                    <TableColumn fx:id="col_losses" editable="false" prefWidth="59.0" resizable="false" text="Losses" />
+                    <TableColumn fx:id="col_draws" editable="false" prefWidth="59.0" resizable="false" sortType="DESCENDING" text="Draws" />
+                </columns>
+            </TableView>
+        </children>
+    </Pane>
+    <Text layoutX="241.0" layoutY="30.0" onMouseClicked="#goToHome" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.2" text="Leaderboard" textAlignment="CENTER" wrappingWidth="150.0">
+        <font>
+            <Font size="20.0" />
+        </font>
+    </Text>
+    <ChoiceBox fx:id="game_choice" layoutX="443.0" layoutY="8.0" prefWidth="150.0" style="-fx-background-color: #6d6875;" />
+</AnchorPane>

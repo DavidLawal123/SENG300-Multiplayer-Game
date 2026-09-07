@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: fae8e0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.ucalgary.seng300.Connect4Controller">
+    <children>
+      <AnchorPane fx:id="player1" layoutX="25.0" layoutY="7.0" prefHeight="57.0" prefWidth="116.0">
+         <children>
+              <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#bd838d" height="62.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" width="116.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e5989b" height="52.0" layoutX="5.0" layoutY="5.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" width="106.0" />
+              <Circle fx:id="player1Pic" fill="#ffc8c8" layoutX="31.0" layoutY="31.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+              <Label fx:id="p1Username" layoutX="58.0" layoutY="22.0" text="PLAYER 1">
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+        <ImageView fx:id="chatButton" fitHeight="40.0" fitWidth="40.0" layoutX="546.0" layoutY="346.0" onMouseClicked="#openCloseChat" onMouseEntered="#chatHoverEnter" onMouseExited="#chatHoverExit" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@chatButton.png" />
+            </image>
+        </ImageView>
+      <AnchorPane fx:id="player2" layoutX="420.0" layoutY="7.0" prefHeight="57.0" prefWidth="116.0">
+         <children>
+            <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#bd838d" height="62.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" width="116.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e5989b" height="52.0" layoutX="5.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="106.0" />
+            <Circle fx:id="player2Pic" fill="#ffc8c8" layoutX="31.0" layoutY="31.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="p2Username" layoutX="58.0" layoutY="22.0" text="PLAYER 2">
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5838d" height="310.0" layoutX="25.0" layoutY="78.0" stroke="BLACK" strokeType="INSIDE" width="515.0" />
+      <GridPane fx:id="c4Board" gridLinesVisible="true" layoutX="30.0" layoutY="83.0" prefHeight="297.0" prefWidth="506.0" style="-fx-background-color: #6d6875;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <StackPane>
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="1">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="2">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="3">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="4">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="5">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="6">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.rowIndex="1">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.rowIndex="2">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="6" GridPane.rowIndex="2">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.rowIndex="3">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="6" GridPane.rowIndex="3">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.rowIndex="4">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="5" GridPane.rowIndex="4">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="6" GridPane.rowIndex="4">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.rowIndex="5">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="5" GridPane.rowIndex="5">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+            <StackPane GridPane.columnIndex="6" GridPane.rowIndex="5">
+               <children>
+                  <Circle fill="#fae8e0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+         </children>
+      </GridPane>
+      <StackPane fx:id="column1" layoutX="27.0" layoutY="77.0" mouseTransparent="false" onMouseClicked="#columnClick1" prefHeight="310.0" prefWidth="72.0" style="-fx-background-color: transparent;" />
+      <StackPane fx:id="column2" layoutX="106.0" layoutY="79.0" mouseTransparent="false" onMouseClicked="#columnClick2" prefHeight="310.0" prefWidth="64.0" style="-fx-background-color: transparent;" />
+      <StackPane fx:id="column3" layoutX="176.0" layoutY="77.0" mouseTransparent="false" onMouseClicked="#columnClick3" prefHeight="310.0" prefWidth="72.0" style="-fx-background-color: transparent;" />
+      <StackPane fx:id="column4" layoutX="248.0" layoutY="78.0" mouseTransparent="false" onMouseClicked="#columnClick4" prefHeight="310.0" prefWidth="72.0" style="-fx-background-color: transparent;" />
+      <StackPane fx:id="column5" layoutX="320.0" layoutY="78.0" mouseTransparent="false" onMouseClicked="#columnClick5" prefHeight="310.0" prefWidth="72.0" style="-fx-background-color: transparent;" />
+      <StackPane fx:id="column6" layoutX="392.0" layoutY="79.0" mouseTransparent="false" onMouseClicked="#columnClick6" prefHeight="310.0" prefWidth="72.0" style="-fx-background-color: transparent;" />
+      <StackPane fx:id="column7" layoutX="464.0" layoutY="79.0" mouseTransparent="false" onMouseClicked="#columnClick7" prefHeight="310.0" prefWidth="72.0" style="-fx-background-color: transparent;" />
+      <AnchorPane fx:id="winPopUp" layoutX="88.0" layoutY="77.0" prefHeight="241.0" prefWidth="448.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4a4651" height="254.0" layoutX="-101.0" opacity="0.82" stroke="BLACK" strokeType="INSIDE" width="615.0" />
+            <Button fx:id="exitGame" layoutX="151.0" layoutY="182.0" mnemonicParsing="false" onMouseClicked="#endGame" onMouseEntered="#exitHoverEnter" onMouseExited="#exitHoverExit" prefHeight="40.0" prefWidth="145.0" style="-fx-background-color: #ffc8c8;" text="LEAVE !!">
+               <font>
+                  <Font name="Lucida Sans Typewriter Regular" size="12.0" />
+               </font></Button>
+            <Label fx:id="winMessage" alignment="CENTER" layoutX="-89.0" layoutY="57.0" prefHeight="70.0" prefWidth="600.0" text="TRY AGAIN" textFill="#ff95ed">
+               <font>
+                  <Font name="Lucida Sans Demibold Italic" size="30.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+      <Text layoutX="149.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playing:">
+         <font>
+            <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="345.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playing:">
+         <font>
+            <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+         </font>
+      </Text>
+      <Circle fill="#ffc8c8" layoutX="180.0" layoutY="50.0" radius="13.0" stroke="#c98181" strokeType="INSIDE" />
+      <Circle fill="#b5838d" layoutX="376.0" layoutY="50.0" radius="13.0" stroke="#724c54" strokeType="INSIDE" />
+    </children>
+</AnchorPane>
