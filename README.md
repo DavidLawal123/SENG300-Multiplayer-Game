@@ -1,150 +1,213 @@
-# First-Day Setup Checklist — JavaFX Maven Project
+# SENG300 Multiplayer Game Platform
 
-Use this checklist **before you start working** on the project.  
-If all items pass, your environment is correctly set up.
+A JavaFX-based multiplayer game platform developed as part of a software engineering course at the University of Calgary.
 
----
+The platform provides a desktop environment where players can create accounts, manage profiles, enter matchmaking queues, join game lobbies, challenge other players, communicate with opponents, and play supported games.
 
-## 1. Required Software
+## Features
 
-Confirm you have **all** of the following:
+- User registration and login
+- Player profiles and profile pictures
+- Player statistics and leaderboards
+- Matchmaking queues
+- Skill-based matchmaking
+- Game lobbies
+- Direct player challenges
+- Opponent chat interface
+- Game result tracking
+- Tic-Tac-Toe
+- Connect Four
+- Modular move validation
+- JUnit test coverage
 
-- ✅ **JDK 25** installed
-- ✅ **IntelliJ IDEA** (Community or Ultimate)
-- ✅ Git installed
+## Technologies
 
-> ⚠ **IntelliJ is the expected IDE for this course.**  
-> Students using any other IDE may encounter setup and collaboration issues when working in groups that use IntelliJ exclusively.  
-> If you use something other than IntelliJ, you are responsible for resolving any IDE-specific issues.
+- Java 25
+- JavaFX 25
+- Maven
+- FXML
+- JUnit
+- Git
 
----
+## Architecture
 
-## 2. Clone the Repository
+The application separates the user interface, game logic, validation system, matchmaking, statistics, and persistence layers.
 
-Clone the starter repository using Git (HTTPS or SSH):
-
-```
-git clone <repo-url>
-cd <repo-directory>
-```
-
-Do not copy files manually between machines.
-
----
-
-## 3. Open the Project in IntelliJ
-
-1. Open IntelliJ IDEA
-2. Choose Open
-3. Select the root folder of the repository
-4. When prompted:
-    - Trust the project
-    - Allow IntelliJ to import the Maven project
-
-IntelliJ should detect this as a Maven project automatically.
-
----
-
-## 4. Verify the JDK in IntelliJ
-
-In IntelliJ:
-
-1. File -> Project Structure -> Project
-2. Confirm:
-    - Project SDK: JDK 25
-    - Language level: 25
-
-If this is incorrect, fix it before continuing.
-
----
-
-## 5. Ensure Data File Exists
-
-The project requires a data.csv file under src/database to load and save user data.
-
-Before running the program, make sure this exists by either:
-1. Creating a blank file src/database/data.csv
-2. Copying the data.template.csv in the same location and renaming it to data.csv
-
----
-
-## 6. Do NOT Run MainApp Directly
-
-Do not click the green Run button on MainApp.
-
-Doing so will result in the following error:
-
-```
-JavaFX runtime components are missing
+```text
+JavaFX User Interface
+        |
+        v
+Controllers
+        |
+        v
+Game Session
+        |
+        v
+Game Engine
+        |
+        v
+Move Validation Manager
+   |        |        |
+   v        v        v
+Turn     Bounds   Game Rules
+Validator Validator Validator
+        |
+        v
+Game State
+        |
+        v
+Outcome Evaluation
 ```
 
-This project must be run using Maven, which correctly configures JavaFX.
+## Supported Games
 
----
+### Tic-Tac-Toe
 
-## 7. Run the Project (Choose One Method)
+The platform supports two-player Tic-Tac-Toe with turn validation, board boundary validation, occupied-position validation, and game-specific rule validation.
 
-### Option A - Run in IntelliJ (recommended)
+### Connect Four
 
-1. Open the Maven tool window
-2. Expand:
-   Project
-   -> Plugins
-   -> javafx
-3. Double-click:
-   javafx:run
+The platform also supports two-player Connect Four with validation for legal moves and game-specific board rules.
 
-A JavaFX window should open.
+## Matchmaking
 
----
+Players can enter matchmaking queues for supported games. The matchmaking system uses player skill ratings to identify compatible opponents.
 
-### Option B - Run from the Terminal (Maven Wrapper)
+The skill matcher prioritizes players with the smallest skill difference while expanding the acceptable skill range as players wait.
 
-This project uses the Maven Wrapper.
-You do not need to install Maven.
+## Multiplayer Implementation
 
-Windows (PowerShell):
+The application provides multiplayer game functionality within the desktop application, including matchmaking, lobbies, challenges, and opponent interactions.
 
+The current implementation runs locally and in-process. Network synchronization is represented by synchronization stubs rather than a deployed Internet-based server. This repository therefore demonstrates the application's multiplayer architecture and client-side functionality without claiming that it currently provides live Internet multiplayer.
+
+## Project Structure
+
+```text
+src/
+├── main/
+│   ├── java/
+│   │   └── ca/ucalgary/seng300/
+│   │       ├── gamelogic/
+│   │       ├── statistics/
+│   │       └── controllers/
+│   └── resources/
+│       └── ca/ucalgary/seng300/
+│
+└── test/
+    └── java/
+
+docs/
+    Architecture and design documentation
+
+pom.xml
+    Maven project configuration
+
+mvnw
+mvnw.cmd
+    Maven Wrapper scripts
 ```
+
+## Requirements
+
+- JDK 25
+- Git
+- Windows, macOS, or Linux with JavaFX-compatible graphics support
+
+Maven does not need to be installed separately because the project includes the Maven Wrapper.
+
+## Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/DavidLawal123/SENG300-Multiplayer-Game.git
+cd SENG300-Multiplayer-Game
+```
+
+The application uses a local CSV file for user persistence.
+
+Create:
+
+```text
+src/database/data.csv
+```
+
+using `src/database/data.template.csv` as a starting point.
+
+The local `data.csv` file is intentionally excluded from version control.
+
+## Running the Application
+
+On Windows:
+
+```powershell
 .\mvnw.cmd javafx:run
 ```
 
-macOS or Linux:
+On macOS or Linux:
 
-```
+```bash
 ./mvnw javafx:run
 ```
 
-First run note:
-The first run may take one to two minutes while dependencies download. This is normal.
+## Running Tests
 
----
+Run the test suite with:
 
-## 8. Expected Result
+```powershell
+.\mvnw.cmd clean test
+```
 
-If everything is correct:
-- A JavaFX window opens
-- No JavaFX runtime errors appear
-- No additional setup is required
+or on macOS/Linux:
 
-You are ready to start the project.
+```bash
+./mvnw clean test
+```
 
----
+## My Contribution — Move Validation System
 
-## 9. Common Problems (Quick Check)
+My primary contribution to this project was the design and implementation of the move-validation subsystem.
 
-If something goes wrong, check these first:
+I developed a modular validation pipeline that verifies player moves before they are applied to the game state. The system separates validation responsibilities into reusable components:
 
-- Running MainApp directly instead of javafx:run
-- Wrong JDK selected in IntelliJ
-- Installing JavaFX manually
-- Using mvn instead of mvnw or mvnw.cmd
+- `MoveValidationManager` — coordinates the validation pipeline
+- `MoveValidator` — defines the validation interface
+- `TurnValidator` — verifies that the correct player is making the move
+- `BoundsValidator` — ensures moves are within the board boundaries
+- `TTTRuleValidator` — validates Tic-Tac-Toe-specific rules
+- `FourCRuleValidator` — validates Connect Four-specific rules
+- `RuleValidator` — provides the structure for game-specific validation
 
-If the JavaFX window opens, your setup is correct.
+The validation pipeline checks:
 
----
+1. Whether it is the correct player's turn
+2. Whether the requested position is within the board boundaries
+3. Whether the requested position is available
+4. Whether the move follows the rules of the current game
 
-## Summary
+The system was designed to separate general validation from game-specific rules, making the architecture easier to maintain and extend when adding additional games.
 
-If the project runs using javafx:run, your setup is correct and you may begin work.
+I also contributed to integrating the validation components into the broader game logic and resolving package and merge issues during development.
 
+Other features in the repository were developed as part of the overall course project.
+
+## Testing
+
+The project includes automated JUnit tests covering components of the game logic and validation system.
+
+Run the full test suite with:
+
+```bash
+./mvnw clean test
+```
+
+## Documentation
+
+Additional project documentation is available in the `docs/` directory, including architecture, structure, use case, and sequence documentation.
+
+## Course Project
+
+This project was developed as part of a software engineering course at the University of Calgary.
+
+The repository has been prepared as a personal portfolio project to demonstrate Java, JavaFX, object-oriented design, software architecture, testing, and Git-based development.
